@@ -35,13 +35,12 @@ namespace example_client
 
                 driver = browser.Driver;
                 
-                Double now = DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalMilliseconds / 1000L;
                 Screenshot image = ((ITakesScreenshot) driver).GetScreenshot();
-                image.SaveAsFile($"{Environment.GetEnvironmentVariable("SCREENSHOTS_PATH")}/screenshot_{now}.png");
+                image.SaveAsFile($"{Environment.GetEnvironmentVariable("SCREENSHOTS_PATH")}/screenshot_1.png");
                 
                 JObject json = new JObject(
-                    new JProperty("timestamp", now));
-                string jsonFilePath = $"{Environment.GetEnvironmentVariable("ARTIFACTS_PATH")}/google_test_{now}.json";
+                    new JProperty("timestamp", "now"));
+                string jsonFilePath = $"{Environment.GetEnvironmentVariable("ARTIFACTS_PATH")}/google_test_1.json";
                 System.IO.File.WriteAllText(@"" + jsonFilePath, json.ToString());
 
                 string title = driver.Title;
@@ -86,13 +85,12 @@ namespace example_client
 
                 driver = browser.Driver;
                 
-                Double now = DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalMilliseconds / 1000L;
                 Screenshot image = ((ITakesScreenshot) driver).GetScreenshot();
-                image.SaveAsFile($"{Environment.GetEnvironmentVariable("SCREENSHOTS_PATH")}/screenshot_{now}.png");
+                image.SaveAsFile($"{Environment.GetEnvironmentVariable("SCREENSHOTS_PATH")}/screenshot_2.png");
                 
                 JObject json = new JObject(
-                    new JProperty("timestamp", now));
-                string jsonFilePath = $"{Environment.GetEnvironmentVariable("ARTIFACTS_PATH")}/any_page_test_{now}.json";
+                    new JProperty("timestamp", "now"));
+                string jsonFilePath = $"{Environment.GetEnvironmentVariable("ARTIFACTS_PATH")}/any_page_test_2.json";
                 System.IO.File.WriteAllText(@"" + jsonFilePath, json.ToString());
 
                 string outputTitle = driver.Title;
