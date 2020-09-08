@@ -25,6 +25,7 @@ namespace example_client
             chrome_options.AddArgument("--disable-ntp-popular-sites");
             chrome_options.AddArgument("--disable-infobars");
             chrome_options.AddArgument("--disable-dev-shm-usage");
+            chrome_options.AddArgument("--window-size=1920,1080");
 
             Driver = new ChromeDriver(chrome_options);
             Driver.Manage().Window.Maximize();
